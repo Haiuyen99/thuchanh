@@ -1,0 +1,21 @@
+<h2>My staff </h2>
+<div>
+  <label>Staff name:
+    <input #staffName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(staffName.value); staffName.value=''">
+    add
+  </button>
+</div>
+
+<ul class="staffs">
+  <li *ngFor="let staff of staffs">
+    <a routerLink="/detail/{{staff.id}}">
+      <span class="badge">{{staff.id}}</span> {{staff.name}}
+    </a>
+    <button class="delete" title="delete staff"
+      (click)="delete(staff)">x</button>
+  </li>
+</ul>
+

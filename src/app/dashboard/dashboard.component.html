@@ -1,0 +1,11 @@
+<h3>Top Staffs</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let staff of staffs" class="col-1-4"
+      routerLink="/detail/{{staff.id}}">
+    <div class="module staff">
+      <h4>{{staff.name}}</h4>
+    </div>
+  </a>
+</div>
+
+<app-staff-search></app-staff-search>
